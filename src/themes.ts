@@ -5,18 +5,23 @@ export type ThemeVariables = Record<string, string>;
 export const THEMES = {
   light: {
     '--background-color': '#ffffff',
-    '--text-color': '#111827',
-    '--accent-color': '#2563eb',
+    '--text-color': '#0f0f0f',
+    '--accent-color': '#cdcdcd'
   },
   dark: {
-    '--background-color': '#111827',
-    '--text-color': '#f9fafb',
-    '--accent-color': '#60a5fa',
+    '--background-color': '#121212',
+    '--text-color': '#f0f0f0',
+    '--accent-color': '#434343',
   },
   ocean: {
     '--background-color': '#ecfeff',
     '--text-color': '#0f172a',
     '--accent-color': '#0891b2',
+  },
+  cappuccino: {
+    '--background-color': '#987663',
+    '--text-color': '#4a312c',
+    '--accent-color': '#987a5a',
   },
 } as const;
 
