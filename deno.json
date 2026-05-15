@@ -17,6 +17,14 @@
   },
   "publish": {
     "include": ["src/", "README.md"],
-    "exclude": ["docs/", ".github/", "qodana.yaml"]
+    "exclude": [
+      "docs/",
+      ".github/",
+      "qodana.yaml",
+      "package.json",
+      "vercel.json",
+      "src/package.json",
+      "src/pnpm-lock.yaml"
+    ]
   }
 }
