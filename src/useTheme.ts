@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { ThemeContext } from './ThemeContext.tsx';
+import { ThemeContext } from './ThemeContext';
 
 // Helper hook for consuming ThemeContext safely.
 export function useTheme() {

@@ -1,15 +1,14 @@
 import { useEffect, useMemo, useState } from 'react';
 import type { PropsWithChildren } from 'react';
-import { ThemeContext } from './ThemeContext.tsx';
-import { THEMES, type ThemeName, type ThemeVariables } from './themes.ts';
+import { ThemeContext } from './ThemeContext';
+import { THEMES, type ThemeName, type ThemeVariables } from './themes';
 
 const DEFAULT_STORAGE_KEY = 'themejs:selected-theme';
 
-export interface ThemeProviderProps extends PropsWithChildren {
+export type ThemeProviderProps = PropsWithChildren<{
   defaultTheme?: ThemeName;
   storageKey?: string;
-}
-
+}>;
 // Applies CSS variables for the selected theme and exposes theme state.
 export function ThemeProvider({
   children,
@@ -37,18 +36,22 @@ export function ThemeProvider({
     const root = document.documentElement;
 
     // Clear all known CSS variables before applying the selected theme.
-    const allThemeKeys = new Set(
-      Object.values(THEMES).flatMap((themeValues) => Object.keys(themeValues as ThemeVariables)),
-    );
+    const allThemeKeys: Record<string, true> = {};
+    Object.keys(THEMES).forEach((themeKey) => {
+      const themeValues = THEMES[themeKey as ThemeName] as ThemeVariables;
+      Object.keys(themeValues).forEach((key) => {
+        allThemeKeys[key] = true;
+      });
+    });
 
-    allThemeKeys.forEach((key) => {
+    Object.keys(allThemeKeys).forEach((key) => {
       root.style.removeProperty(key);
     });
 
     // Apply CSS custom properties from the active theme.
     const selectedThemeVariables = THEMES[theme] as ThemeVariables;
-    Object.entries(selectedThemeVariables).forEach(([key, value]) => {
-      root.style.setProperty(key, value);
+    Object.keys(selectedThemeVariables).forEach((key) => {
+      root.style.setProperty(key, selectedThemeVariables[key]);
     });
 
     if (typeof window !== 'undefined') {

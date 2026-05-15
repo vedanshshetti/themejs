@@ -1,5 +1,5 @@
-export { ThemeContext, type ThemeContextValue } from './ThemeContext.tsx';
-export { ThemeProvider, type ThemeProviderProps } from './ThemeProvider.tsx';
-export { ThemeSwitcher, type ThemeSwitcherProps } from './ThemeSwitcher.tsx';
-export { useTheme } from './useTheme.ts';
-export { THEMES, type ThemeName, type ThemeVariables } from './themes.ts';
+export { ThemeContext, type ThemeContextValue } from './ThemeContext';
+export { ThemeProvider, type ThemeProviderProps } from './ThemeProvider';
+export { ThemeSwitcher, type ThemeSwitcherProps } from './ThemeSwitcher';
+export { useTheme } from './useTheme';
+export { THEMES, type ThemeName, type ThemeVariables } from './themes';

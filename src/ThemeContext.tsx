@@ -1,5 +1,5 @@
 import { createContext } from 'react';
-import type { ThemeName } from './themes.ts';
+import type { ThemeName } from './themes';
 
 // Shape of the theme context shared across components.
 export interface ThemeContextValue {
