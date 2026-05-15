@@ -1,6 +1,6 @@
 import { ChangeEvent } from 'react';
-import { useTheme } from './useTheme';
-import { THEMES, type ThemeName } from './themes';
+import { useTheme } from './useTheme.ts';
+import { THEMES, type ThemeName } from './themes.ts';
 
 export interface ThemeSwitcherProps {
   id?: string;

@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import type { PropsWithChildren } from 'react';
-import { ThemeContext } from './ThemeContext';
-import { THEMES, type ThemeName, type ThemeVariables } from './themes';
+import { ThemeContext } from './ThemeContext.tsx';
+import { THEMES, type ThemeName, type ThemeVariables } from './themes.ts';
 
 const DEFAULT_STORAGE_KEY = 'themejs:selected-theme';
 

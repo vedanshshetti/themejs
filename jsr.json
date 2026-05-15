@@ -2,5 +2,14 @@
   "name": "@toolzone/themejs",
   "version": "0.1.0",
   "license": "MIT",
-  "exports": "./src/index.ts"
+  "exports": "./src/index.ts",
+  "imports": {
+    "react": "npm:react@18.2.0",
+    "@types/react": "npm:@types/react@18.2.0"
+  },
+  "compilerOptions": {
+    "lib": ["dom", "dom.iterable", "deno.ns", "deno.window"],
+    "jsx": "react-jsx",
+    "jsxImportSource": "npm:react@18.2.0"
+  }
 }
