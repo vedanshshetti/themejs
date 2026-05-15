@@ -1,0 +1,6 @@
+{
+  "buildCommand": "npm run build --prefix docs",
+  "installCommand": "npm ci --prefix docs",
+  "outputDirectory": "docs/dist",
+  "framework": null
+}
