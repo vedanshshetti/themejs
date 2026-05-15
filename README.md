@@ -18,16 +18,16 @@ You can install `themejs` directly from JSR using your favorite package manager:
 
 ```bash
 # Using npm
-npx jsr add @vedansh/themejs
+npx jsr add @toolzone/themejs
 
 # Using yarn
-yarn dlx jsr add @vedansh/themejs
+yarn dlx jsr add @toolzone/themejs
 
 # Using pnpm
-pnpm dlx jsr add @vedansh/themejs
+pnpm dlx jsr add @toolzone/themejs
 
 # Using deno
-deno add @vedansh/themejs
+deno add @toolzone/themejs
 ```
 
 ## 🚀 Usage

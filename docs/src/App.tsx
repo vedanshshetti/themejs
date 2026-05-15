@@ -2,7 +2,7 @@ import { ThemeSwitcher, useTheme, THEMES, type ThemeName } from 'themejs';
 import { CodeBlock } from './components/CodeBlock';
 import { ApiTable } from './components/ApiTable';
 
-const INSTALL_CMD = 'npx jsr add @vedansh/themejs';
+const INSTALL_CMD = 'npx jsr add @toolzone/themejs';
 
 const THEME_LABELS: Record<ThemeName, string> = {
   light: 'Light',
@@ -106,7 +106,7 @@ export default function App() {
           </p>
           <CodeBlock
             language="tsx"
-            code={`import { ThemeProvider } from '@vedansh/themejs';
+            code={`import { ThemeProvider } from '@toolzone/themejs';
 
 export function App() {
   return (
@@ -126,7 +126,7 @@ export function App() {
           </p>
           <CodeBlock
             language="tsx"
-            code={`import { ThemeSwitcher } from '@vedansh/themejs';
+            code={`import { ThemeSwitcher } from '@toolzone/themejs';
 
 export function Header() {
   return <ThemeSwitcher id="app-theme" />;
@@ -136,7 +136,7 @@ export function Header() {
           <p>Build custom controls with the theme context hook.</p>
           <CodeBlock
             language="tsx"
-            code={`import { useTheme } from '@vedansh/themejs';
+            code={`import { useTheme } from '@toolzone/themejs';
 
 export function CustomToggle() {
   const { theme, setTheme } = useTheme();
@@ -180,7 +180,7 @@ button.primary {
             Vedansh Shetti
           </a>
           . Published on{' '}
-          <a href="https://jsr.io/@vedansh/themejs" target="_blank" rel="noreferrer">
+          <a href="https://jsr.io/@toolzone/themejs" target="_blank" rel="noreferrer">
             JSR
           </a>
           .
