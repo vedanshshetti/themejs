@@ -1,15 +1,22 @@
 {
-  "name": "@toolzone/themejs",
+  "name": "@vedansh/themejs",
   "version": "0.1.0",
   "license": "MIT",
   "exports": "./src/index.ts",
   "imports": {
     "react": "npm:react@18.2.0",
+    "react/jsx-runtime": "npm:react@18.2.0/jsx-runtime",
+    "react/jsx-dev-runtime": "npm:react@18.2.0/jsx-dev-runtime",
     "@types/react": "npm:@types/react@18.2.0"
   },
   "compilerOptions": {
     "lib": ["dom", "dom.iterable", "deno.ns", "deno.window", "es2019"],
-    "jsx": "react-jsx",
-    "jsxImportSource": "npm:react@18.2.0"
+    "jsx": "react",
+    "jsxFactory": "React.createElement",
+    "jsxFragmentFactory": "React.Fragment"
+  },
+  "publish": {
+    "include": ["src/", "README.md"],
+    "exclude": ["docs/", ".github/", "qodana.yaml"]
   }
 }

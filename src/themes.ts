@@ -18,7 +18,7 @@ export const THEMES = {
     '--text-color': '#0f172a',
     '--accent-color': '#0891b2',
   },
-  cappuccino: {
+  cappucino: {
     '--background-color': '#987663',
     '--text-color': '#4a312c',
     '--accent-color': '#987a5a',

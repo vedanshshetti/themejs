@@ -2,6 +2,8 @@
 
 A lightweight, flexible, and fully-typed React theme management library. ThemeJS makes it effortless to implement a dynamic theming system in your React applications using CSS Custom Properties and Context.
 
+**Documentation:** [themejs.vercel.app](https://themejs.vercel.app) (live demo, API reference, and setup guide)
+
 ## ✨ Features
 
 - **Built-in Themes:** Comes out of the box with `light`, `dark`, `ocean`, and `cappucino` themes!

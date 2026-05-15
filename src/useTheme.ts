@@ -1,8 +1,8 @@
 import { useContext } from 'react';
-import { ThemeContext } from './ThemeContext';
+import { ThemeContext, type ThemeContextValue } from './ThemeContext.tsx';
 
 // Helper hook for consuming ThemeContext safely.
-export function useTheme() {
+export function useTheme(): ThemeContextValue {
   const context = useContext(ThemeContext);
 
   if (!context) {

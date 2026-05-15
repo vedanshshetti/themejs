@@ -1,0 +1,3 @@
+# Local library dev install (dependencies come from JSR/npm maps in jsr.json)
+node_modules/
+package-lock.json

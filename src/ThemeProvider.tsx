@@ -1,7 +1,7 @@
-import { useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import type { PropsWithChildren } from 'react';
-import { ThemeContext } from './ThemeContext';
-import { THEMES, type ThemeName, type ThemeVariables } from './themes';
+import { ThemeContext } from './ThemeContext.tsx';
+import { THEMES, type ThemeName, type ThemeVariables } from './themes.ts';
 
 const DEFAULT_STORAGE_KEY = 'themejs:selected-theme';
 
@@ -14,8 +14,8 @@ export function ThemeProvider({
   children,
   defaultTheme = 'light',
   storageKey = DEFAULT_STORAGE_KEY,
-}: ThemeProviderProps) {
-  const [theme, setTheme] = useState<ThemeName>(() => {
+}: ThemeProviderProps): React.ReactElement {
+  const [theme, setThemeState] = useState<ThemeName>(() => {
     if (typeof window === 'undefined') {
       return defaultTheme;
     }
@@ -49,15 +49,20 @@ export function ThemeProvider({
     });
 
     // Apply CSS custom properties from the active theme.
-    const selectedThemeVariables = THEMES[theme] as ThemeVariables;
-    Object.keys(selectedThemeVariables).forEach((key) => {
+    const activeTheme: ThemeName = theme;
+    const selectedThemeVariables: ThemeVariables = { ...THEMES[activeTheme] };
+    for (const key of Object.keys(selectedThemeVariables) as Array<keyof ThemeVariables>) {
       root.style.setProperty(key, selectedThemeVariables[key]);
-    });
+    }
 
     if (typeof window !== 'undefined') {
       window.localStorage.setItem(storageKey, theme);
     }
   }, [theme, storageKey]);
+
+  const setTheme = (nextTheme: ThemeName) => {
+    setThemeState(nextTheme);
+  };
 
   const contextValue = useMemo(() => ({ theme, setTheme }), [theme]);
 

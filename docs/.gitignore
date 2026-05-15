@@ -1,0 +1,7 @@
+# Local docs app artifacts (root .gitignore also covers these)
+node_modules/
+dist/
+vendor/
+*.local
+
+.vercel
